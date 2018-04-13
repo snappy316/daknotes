@@ -4,3 +4,79 @@
 @import "reset/normalize";
 
 @import "base/base";
+
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Merriweather+Sans');
+
+body {
+  background: #fdf6e3;
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+}
+
+@import "partials/dropdowns";
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.75em;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 2em;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+h4 {
+  font-weight: 700;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+header {
+  padding: 0.75em;
+
+  display: grid;
+  grid-template-columns: max-content max-content auto;
+  grid-column-gap: 2em;
+  align-items: center;
+
+  .logo h1 {
+    margin: 0;
+  }
+  .section span {
+    padding-right: 0.5em;
+  }
+  .menu {
+    justify-self: end;
+  }
+}
+
+main {
+  padding: 0.75em;
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 1024px) 1fr;
+  grid-template-areas: "empty-a container empty-b";
+}
+
+.container {
+  background: #fff;
+  padding: 1em 2em;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1);
+
+  grid-area: container;
+
+  .breadcrumb {
+    color: gray;
+    text-transform: uppercase;
+    font-size: 0.75em;
+    padding-bottom: 1em;
+  }
+}
