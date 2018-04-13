@@ -1,5 +1,6 @@
 activate :aria_current
 activate :autoprefixer
+activate :syntax
 
 require 'slim'
 

@@ -7,6 +7,8 @@ html lang="en"
     = stylesheet_link_tag "main"
     = javascript_include_tag "main"
     script defer='' src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"
+    style
+      = Rouge::Themes::Base16::Solarized.render(:scope => '.highlight')
   body
     header
       .logo
