@@ -1,6 +1,8 @@
 activate :aria_current
 activate :autoprefixer
 
+require 'slim'
+
 set :css_dir, "assets/stylesheets"
 set :fonts_dir, "assets/fonts"
 set :images_dir, "assets/images"
