@@ -3,6 +3,7 @@ pageable: true
 per_page: 10
 layout: main
 ---
+h1 = "Articles tagged '#{tagname}'"
 
 - if paginate && num_pages > 1
   p = "Page #{page_number} of #{num_pages}"
@@ -11,18 +12,11 @@ layout: main
     p = link_to 'Previous page', prev_page
 
 - page_articles.each_with_index do |article, i|
-  h1 = link_to article.title, article
-  span = link_to article.tags.first, tag_path(article.tags.first)
-  span = " | #{article.data.date.strftime("%B %-d, %Y")}"
-  - if article.data.date_updated
-    span = " (updated on #{article.data.date_updated.strftime("%B %-d, %Y")})"
-
+  h2 = link_to article.title, article
   - if article.data.post_slug
-    p
     p = article.data.post_slug
-    p
   - else
-    p = article.summary(150)
+    p = article.summary
 
 - if paginate
   - if next_page

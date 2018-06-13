@@ -36,3 +36,13 @@ configure :production do
   activate :minify_html
   activate :minify_javascript
 end
+
+activate :blog do |blog|
+  blog.sources = "posts/{year}-{month}-{day}-{title}.html"
+  blog.layout = :blog
+  blog.permalink = "{title}"
+  blog.taglink = ":tag.html"
+  blog.tag_template = "tag.html"
+end
+
+activate :directory_indexes

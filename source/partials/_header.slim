@@ -1,0 +1,24 @@
+header
+  .logo
+    h1 = link_to "DAK NOTES", '/'
+  .section
+    .dropdown
+      .dropdown-trigger
+        span Categories
+        i.fas.fa-chevron-down
+      .dropdown-content
+        - blog.tags.keys.each do |tag|
+          = link_to tag.capitalize, tag_path(tag)
+
+  .menu
+    .dropdown
+      span.dropdown-trigger
+        i.fas.fa-bars.fa-2x
+      .dropdown-content.align-right
+        a href="/about" About
+        a href="/contact" Contact
+        hr
+        a href="https://davidker.co" David Ker
+        a href="https://daknotes.com" DAKNOTES
+        a href="https://dak.codes" DAKCODES
+        a href="https://plateau.digital" Plateau Digital
