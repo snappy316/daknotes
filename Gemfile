@@ -1,7 +1,5 @@
 source "https://rubygems.org"
 
-ruby "2.5.1"
-
 gem "bourbon", "~> 5.0"
 gem "builder", "~> 3.2"
 gem "middleman", "~> 4.2"
