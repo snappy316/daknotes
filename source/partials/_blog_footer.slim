@@ -1,5 +1,0 @@
-- if current_article.present?
-  footer.blog-footer
-    - if current_article.data.date_updated.present?
-      span = "Updated #{current_article.data.date_updated.strftime("%B %-d, %Y")}, originally published "
-    span = "#{current_article.data.date.strftime("%B %-d, %Y")}"
