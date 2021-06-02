@@ -16,6 +16,41 @@ activate :external_pipeline,
 
 activate :livereload
 
+activate :blog do |blog|
+  blog.sources = "posts/{year}-{month}-{day}-{title}.html"
+  blog.layout = :blog
+  blog.permalink = "{post_type}/{title}"
+
+  blog.paginate = true
+  blog.page_link = "p{num}"
+  blog.per_page = 10
+
+  blog.taglink = ":tag.html"
+  blog.tag_template = "tag.html"
+
+  blog.custom_collections = {
+    category: {
+      link: "/{category}s",
+      template: "/category.html"
+    }
+  }
+end
+
+activate :directory_indexes
+activate :syntax
+
+set :markdown,
+  autolink: true,
+  fenced_code_blocks: true,
+  footnotes: true,
+  highlight: true,
+  input: "GFM",
+  smartypants: true,
+  strikethrough: true,
+  tables: true,
+  with_toc_data: true
+set :markdown_engine, :redcarpet
+
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 
