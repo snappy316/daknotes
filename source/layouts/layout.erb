@@ -6,12 +6,24 @@
     <meta name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Use the title from a page's frontmatter if it has one -->
-    <title><%= current_page.data.title || "Middleman" %></title>
+    <title><%= current_page.data.title || "daknotes" %></title>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <%= stylesheet_link_tag "site" %>
     <%= javascript_include_tag "site" %>
   </head>
-  <body>
-    <%= yield %>
+  <body class="bg-gray-300">
+    <div class="min-h-screen h-full w-screen font-serif">
+      <div class="max-w-xs md:max-w-lg lg:max-w-4xl mx-auto container py-12 sm:py-24">
+        <h1 class="text-4xl sm:text-6xl mb-10">
+          <a href="/" class="">
+            daknotes
+          </a>
+        </h1>
+
+        <%= yield %>
+
+        <%= partial "shared/footer" %>
+      </div>
+    </div>
   </body>
 </html>
