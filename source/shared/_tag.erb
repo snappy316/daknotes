@@ -1,0 +1,28 @@
+<% tag_colors =
+  case tag
+  when "productivity"
+    "bg-purple-100 text-purple-800"
+  when "docker"
+    "bg-blue-800 text-blue-300"
+  when "digitalocean"
+    "bg-blue-600 text-white"
+  when "ruby"
+    "bg-red-600 text-red-100"
+  when "rails"
+    "bg-red-100 text-red-700"
+  when "javascript"
+    "bg-yellow-300 text-gray-900"
+  when "git"
+    "bg-yellow-100 text-orange-600"
+  when "mac"
+    "bg-gray-100 text-gray-700"
+  when "tooling"
+    "bg-gray-900 text-green-400"
+  else
+    "bg-gray-400 text-gray-800"
+  end
+%>
+
+<div class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-sans font-medium leading-5 transform duration-300 ease-in-out hover:scale-105 <%= tag_colors %>">
+  <%= link_to tag, tag %>
+</div>

@@ -1,0 +1,15 @@
+<div class="mt-2 text-gray-600 leading-7 max-w-full <%= "prose no-underline" if article.data.category == "til" %>">
+  <% if article.data.category == "link" %>
+    <%= article.body %>
+  <% elsif article.data.category == "til" %>
+    <% if article.body.length > 500 %>
+      <%= article.body[0..500] %>...
+    <% else %>
+      <%= article.body %>
+    <% end %>
+  <% elsif article.data.post_slug %>
+    <%= article.data.post_slug %>
+  <% else %>
+    <%= article.summary %>
+  <% end %>
+</div>

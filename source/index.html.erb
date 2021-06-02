@@ -1,21 +1,10 @@
 ---
 title: daknotes
 ---
-<div class="min-h-screen h-full w-screen bg-gray-300 font-serif">
-  <div class="max-w-xs md:max-w-lg lg:max-w-4xl mx-auto container py-24">
-    <div class="text-6xl mb-10">
-      daknotes
-    </div>
 
-    <div class="">
-      <%# Link Card %>
-      <%= partial "cards/link_card", locals: {}  %>
 
-      <%# Article Card %>
-      <%= partial "cards/article_card", locals: {} %>
-
-      <%# TIL Card %>
-      <%= partial "cards/til_card", locals: {} %>
-    </div>
-  </div>
+<div class="">
+  <% blog.articles.each do |article| %>
+    <%= partial "cards/card", locals: { article: article } %>
+  <% end %>
 </div>
