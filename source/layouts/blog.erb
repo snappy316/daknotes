@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title><%= current_page.data.title  %> | daknotes</title>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <%= stylesheet_link_tag "site" %>
+    <%= javascript_include_tag "site" %>
+  </head>
+  <body class="bg-gray-300">
+    <div class="min-h-screen h-full w-screen font-serif">
+      <div class="max-w-xs md:max-w-lg lg:max-w-2xl xl:max-w-3xl mx-auto container px-4 sm:px-0 pt-12 pb-24">
+        <h1 class="text-2xl mb-12">
+          <a href="/" class="text-gray-500 hover:text-gray-800 transition ease-in-out duration-300">
+            daknotes
+          </a>
+        </h1>
+        <h2 class="text-2xl md:text-3xl mb-10 max-w-prose mx-auto">
+          <% if current_page.data.category == "link" %>
+            <a href="<%= current_page.data.url %>"
+               class="hover:text-gray-600 transition ease-in-out duration-150"
+               target="_blank"
+               >
+               <%= current_page.data.title %>
+               <span class="inline-block ml-2 text-gray-500">
+                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                 </svg>
+               </span>
+            </a>
+          <% else %>
+            <%= current_page.data.title %>
+          <% end %>
+        </h2>
+
+        <article class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto">
+          <%= yield %>
+        </article>
+
+          <div class="mt-4 font-sans">
+            <%= partial "shared/category", locals: { category: current_page.data.category } %>
+            <% Array(current_page.data.tags).each do |tag| %>
+              <%= partial "shared/tag", locals: { tag: tag } %>
+            <% end %>
+            <div class="inline-flex text-sm text-gray-600">
+              <span class="hidden sm:inline mx-1">
+                &middot;
+              </span>
+              <span class="mt-2 sm:mt-0">
+                <%= current_page.data.date.strftime("%B %e, %Y") %>
+                <% if current_page.data.date_updated %>
+                  <span class="hidden sm:inline mx-1">
+                    &middot;
+                  </span>
+                  Updated <%= current_page.data.date_updated.strftime("%B %e, %Y") %>
+                <% end %>
+              </span>
+            </div>
+          </div>
+
+        <%= partial "shared/footer" %>
+      </div>
+    </div>
+  </body>
+</html>
