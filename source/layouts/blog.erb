@@ -13,18 +13,18 @@
     <script src="https://cdn.usefathom.com/script.js" data-site="YLKZWUEE" defer></script>
     <!-- / Fathom -->
   </head>
-  <body class="bg-gray-300">
+  <body class="bg-gray-300 dark:bg-gray-800">
     <div class="min-h-screen h-full w-screen font-serif">
       <div class="max-w-xs md:max-w-lg lg:max-w-2xl xl:max-w-3xl mx-auto container px-4 sm:px-0 pt-12 pb-24">
         <h1 class="text-2xl mb-12">
-          <a href="/" class="text-gray-500 hover:text-gray-800 transition ease-in-out duration-300">
+          <a href="/" class="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-300 transition ease-in-out duration-300">
             daknotes
           </a>
         </h1>
-        <h2 class="text-2xl md:text-3xl mb-10 max-w-prose mx-auto">
+        <h2 class="text-2xl md:text-3xl dark:text-gray-300 mb-10 max-w-prose mx-auto">
           <% if current_page.data.category == "link" %>
             <a href="<%= current_page.data.url %>"
-               class="hover:text-gray-600 transition ease-in-out duration-150"
+               class="hover:text-gray-600 hover:dark:text-gray-400 transition ease-in-out duration-150"
                target="_blank"
                >
                <%= current_page.data.title %>
@@ -39,7 +39,7 @@
           <% end %>
         </h2>
 
-        <article class="prose prose-sm sm:prose lg:prose-lg xl:prose-xl mx-auto">
+        <article class="prose dark:prose-dark prose-sm md:prose-lg xl:prose-xl mx-auto">
           <%= yield %>
         </article>
 
@@ -52,7 +52,7 @@
               <span class="hidden sm:inline mx-1">
                 &middot;
               </span>
-              <span class="mt-2 sm:mt-0">
+              <span class="mt-2 sm:mt-0 dark:text-gray-400">
                 <%= current_page.data.date.strftime("%B %e, %Y") %>
                 <% if current_page.data.date_updated %>
                   <span class="hidden sm:inline mx-1">
