@@ -26,11 +26,62 @@ module.exports = {
             'tbody tr': {
               borderBottomColor: defaultTheme.colors.gray[500],
             },
+            'ol > li::before': {
+              color: defaultTheme.colors.gray[600],
+            },
+            'figure figcaption': {
+              color: defaultTheme.colors.gray[600],
+            },
           },
         },
         dark: {
           css: {
             color: defaultTheme.colors.gray[300],
+            '[class~="lead"]': {
+              color: defaultTheme.colors.gray[200],
+            },
+            blockquote: {
+              color: defaultTheme.colors.gray[200],
+            },
+            code: {
+              color: defaultTheme.colors.gray[200],
+            },
+            strong: {
+              color: defaultTheme.colors.gray[200],
+            },
+            th: {
+              color: defaultTheme.colors.gray[300],
+            },
+            a: {
+              color: defaultTheme.colors.gray[300],
+            },
+            'a code': {
+              color: defaultTheme.colors.gray[100],
+            },
+            'ol > li::before': {
+              color: defaultTheme.colors.gray[400],
+            },
+            'figure figcaption': {
+              color: defaultTheme.colors.gray[300],
+            },
+            h1: {
+              color: defaultTheme.colors.gray[100],
+            },
+            h2: {
+              color: defaultTheme.colors.gray[100],
+            },
+            h3: {
+              color: defaultTheme.colors.gray[100],
+            },
+            h4: {
+              color: defaultTheme.colors.gray[100],
+            },
+            h5: {
+              color: defaultTheme.colors.gray[100],
+            },
+            h6: {
+              color: defaultTheme.colors.gray[100],
+            },
           },
         },
       },
