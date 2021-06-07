@@ -1,6 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+  darkMode: 'media',
   theme: {
     extend: {
       fontFamily: {
@@ -27,6 +28,11 @@ module.exports = {
             },
           },
         },
+        dark: {
+          css: {
+            color: defaultTheme.colors.gray[300],
+          },
+        },
       },
     },
     future: {
@@ -39,4 +45,9 @@ module.exports = {
     require('@tailwindcss/typography'),
     require('@tailwindcss/aspect-ratio'),
   ],
+  variants: {
+    extend: {
+      typography: ['dark'],
+    },
+  },
 };
