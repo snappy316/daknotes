@@ -1,9 +1,9 @@
 <div class="font-bold text-xl md:text-2xl font-sans">
   <a
-    class="hover:text-gray-500 transition duration-300 ease-in-out"
+    class="hover:text-gray-500 dark:text-gray-200 dark:hover:text-gray-400 transition duration-300 ease-in-out"
     href="<%= article.data.category == "link" ? article.data.url : article.url %>"
     target="<%= article.data.category == "link" ? "blank" : "" %>"
-    >
+  >
     <span class="text-gray-500 inline-block">
       <% case article.data.category %>
       <% when "link" %>

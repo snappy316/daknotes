@@ -1,4 +1,4 @@
-<div class="mt-2 text-gray-600 leading-7 max-w-full <%= "prose no-underline" if article.data.category == "til" %>">
+<div class="mt-2 text-gray-600 dark:text-gray-300 leading-7 max-w-full <%= "prose dark:prose-dark no-underline" if article.data.category == "til" %>">
   <% if article.data.category == "link" %>
     <%= article.body %>
   <% elsif article.data.category == "til" %>
